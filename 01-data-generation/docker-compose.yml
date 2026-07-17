@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: metromart_user
+      POSTGRES_PASSWORD: metromart_pass
+      POSTGRES_DB: metromart_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U metromart_user -d metromart_db"]
+      interval: 3s
+      retries: 20
+      timeout: 5s
+
+volumes:
+  postgres_data:

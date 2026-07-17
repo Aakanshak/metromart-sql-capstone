@@ -1,0 +1,7 @@
+.venv/
+.pgdata/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+01-data-generation/*.csv
+!01-data-generation/data_quality_report.json

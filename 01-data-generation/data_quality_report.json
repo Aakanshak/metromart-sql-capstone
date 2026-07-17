@@ -1,0 +1,30 @@
+{
+  "seed": 20260717,
+  "date_range": [
+    "2023-07-01",
+    "2026-06-30"
+  ],
+  "customers": 12240,
+  "near_duplicate_customer_identities": 240,
+  "address_rows": 15905,
+  "orders_raw_rows": 200800,
+  "unique_order_ids": 200000,
+  "exact_duplicate_order_rows": 800,
+  "order_items": 340366,
+  "guaranteed_zero_order_dates": [
+    "2023-09-12",
+    "2023-09-13",
+    "2024-02-29",
+    "2024-08-18",
+    "2024-08-19",
+    "2025-03-04",
+    "2025-10-21",
+    "2025-10-22",
+    "2026-01-15"
+  ],
+  "online_inventory_rows": 959,
+  "instore_inventory_rows": 4737,
+  "marketing_email_rows": 7349,
+  "marketing_sms_rows": 6114,
+  "marketing_exact_identity_overlap": 2269
+}
