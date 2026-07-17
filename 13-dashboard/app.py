@@ -1,5 +1,4 @@
 """Live PostgreSQL dashboard; analytical results are never pre-cached."""
-import os
 from datetime import date
 import pandas as pd
 import plotly.express as px
@@ -12,9 +11,10 @@ st.caption("Every visual executes parameterized SQL against PostgreSQL.")
 
 @st.cache_resource
 def connection():
-    return psycopg2.connect(host=os.getenv("POSTGRES_HOST", "127.0.0.1"),
-        port=os.getenv("POSTGRES_PORT", "5432"), dbname=os.getenv("POSTGRES_DB", "metromart_db"),
-        user=os.getenv("POSTGRES_USER", "metromart_user"), password=os.getenv("POSTGRES_PASSWORD", "metromart_pass"))
+    return psycopg2.connect(
+        st.secrets["DATABASE_URL"],
+        sslmode="require",
+    )
 
 def query(statement, params=None):
     conn = connection()

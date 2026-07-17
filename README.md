@@ -49,6 +49,14 @@ pip install -r 13-dashboard/requirements.txt
 streamlit run 13-dashboard/app.py
 ~~~
 
+For Streamlit Community Cloud, add one secret under **Advanced settings**:
+
+~~~toml
+DATABASE_URL = "postgresql://USER:PASSWORD@HOST/DATABASE"
+~~~
+
+The dashboard requires SSL and connects directly to that hosted PostgreSQL database.
+
 ## Deliberate source-system problems
 
 The seeded generator produces 12,240 CRM rows including 240 near-duplicate identities; 200,800 raw order headers including 800 exact double-inserts; 340,366 items; nine guaranteed no-order dates; SCD2 moves with a small number of history gaps; unequal online/store inventory coverage; and overlapping email/SMS lists. See [data_quality_report.json](01-data-generation/data_quality_report.json).
